@@ -1,5 +1,8 @@
 public class SalesManager {
-    protected long [] sales;
+    protected long[] sales;
+//    protected long max;
+//    protected long min;
+
 
     public SalesManager(long[] sales) {
         this.sales = sales;
@@ -12,26 +15,27 @@ public class SalesManager {
                 max = sale;
             }
         }
+        //this.max = max;
         return max;
     }
 
     public long min() {
-        long min = sales [0];
+        long min = sales[0];
         for (long sale : sales) {
             if (sale < min) {
                 min = sale;
             }
         }
+        //this.min = min;
         return min;
     }
+
     public long average() {
         int sum = 0;
         for (long sale : sales) {
-            if (sale != max() && sale != min()) {
                 sum += sale;
-            }
         }
-        long average = sum/(sales.length -2);
+        long average = (sum - (max()+min())) / (sales.length - 2);
         return average;
     }
 }
