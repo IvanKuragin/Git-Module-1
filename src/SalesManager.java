@@ -33,9 +33,9 @@ public class SalesManager {
     public long average() {
         int sum = 0;
         for (long sale : sales) {
-                sum += sale;
+            sum += sale;
         }
-        long average = (sum - (max()+min())) / (sales.length - 2);
+        long average = (sum - (max() + min())) / (sales.length - 2);
         return average;
     }
 }
